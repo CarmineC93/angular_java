@@ -12,7 +12,10 @@ export class LoginComponent implements OnInit {
   password:string = "";
 
   autenticato :boolean = true;
-  errorMsg : string = "spiacente, password e/o userid sono errati"
+  errorMsg : string = "spiacente, password e/o userid sono errati";
+
+  titolo : string = "Accesso e autenticazione";
+  sottotitolo : string = "Inserisci credenziali di accesso"
 
   constructor(private route: Router) { }
 
