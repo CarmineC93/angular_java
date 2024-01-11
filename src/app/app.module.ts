@@ -12,6 +12,8 @@ import { CoreModule } from './core/core.module';
 import { LogoutComponent } from './pages/logout/logout.component';
 import { GridArticoliComponent } from './pages/grid-articoli/grid-articoli.component';
 import { ArticoliCardComponent } from './components/articoli-card/articoli-card.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { ArticoliCardComponent } from './components/articoli-card/articoli-card.
     ArticoliComponent,
     LogoutComponent,
     GridArticoliComponent,
-    ArticoliCardComponent
+    ArticoliCardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CoreModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
