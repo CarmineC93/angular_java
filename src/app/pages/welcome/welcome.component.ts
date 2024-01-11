@@ -21,13 +21,25 @@ export class WelcomeComponent implements OnInit {
   }
 
   saluti : string = "";
+  errore : string = "";
+
+
+  getSaluti = () : void => {
+    this.salutiSrv.getSaluti(this.utente).subscribe({
+    next: this.handleResponse.bind(this),
+    error: this.handleError.bind(this)
+    })
+  }
+
 
   handleResponse(response: Object){
     this.saluti = response.toString();
   }
 
-  getSaluti = () : void => {
-    this.salutiSrv.getSaluti().subscribe(response => this.handleResponse(response));
+  handleError(error: any){
+    console.log(error);
+    this.errore = error.error.message;
   }
+
 
 }
